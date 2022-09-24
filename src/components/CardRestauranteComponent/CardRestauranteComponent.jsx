@@ -11,7 +11,7 @@ export default function CardRestauranteComponent(props) {
                 <h1 className='name'>{restaurante.nome}</h1>
                 <p className='distance'>{restaurante.distancia}</p>
                 <p className='grade' >{restaurante.nota}</p>
-                <p className='time'>{restaurante.tempo_medio} - {restaurante.valor_entrega}</p>
+                <p className='time'>{restaurante.tempo_medio} - {Number(restaurante.valor_entrega) !== 0 ? restaurante.valor_entrega : 'Grátis'}</p>
             </div>
 
         </div>
