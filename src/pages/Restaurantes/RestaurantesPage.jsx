@@ -6,6 +6,8 @@ import {
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
+import CardRestauranteComponent from "../../components/CardRestauranteComponent";
+
 
 function RestaurantesPage(props) {
   const categoria = props.id ?? 0;
@@ -65,7 +67,7 @@ function RestaurantesPage(props) {
       </div>
       {restaurantesBaratinho?.map(restaurante => (
         <div key={restaurante.id}>
-          {restaurante.nome}
+          <CardRestauranteComponent restaurante={restaurante} />
         </div>
       ))}
 
@@ -76,7 +78,7 @@ function RestaurantesPage(props) {
       </div>
       {restaurantesNoPreco?.map(restaurante => (
         <div key={restaurante.id}>
-          {restaurante.nome}
+        <CardRestauranteComponent restaurante={restaurante} />
         </div>
       ))}
 
@@ -87,7 +89,7 @@ function RestaurantesPage(props) {
       </div>
       {restaurantesCaro?.map(restaurante => (
         <div key={restaurante.id}>
-          {restaurante.nome}
+        <CardRestauranteComponent restaurante={restaurante} />
         </div>
       ))}
     </Container>
