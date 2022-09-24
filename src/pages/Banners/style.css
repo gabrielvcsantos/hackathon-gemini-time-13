@@ -18,9 +18,11 @@
 }
 
 .full-height .subtitle {
+  display: flex;
+  justify-content: space-around;
   padding-bottom: 14px;
   min-height: 62px;
-  max-width: 20px;
+  max-width: 100%;
 }
 
 .full-height .descricao {
