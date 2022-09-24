@@ -20,11 +20,10 @@ function CategoriasPage() {
 		setLoading(false);
 	};
 
-	console.log(categorias);
-
 	useEffect(() => {
 		getCategorias();
 	}, []);
+
 	return (
 		<Container className="categorias">
 			<Typography variant="h5" align="center" color="primary" className="title">

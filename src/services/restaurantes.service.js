@@ -1,6 +1,8 @@
 import Api from "./api";
 
 export async function getRestaurantes(id) {
+  id = id ?? '';
+
   try {
     const restaurantes = await Api.get(`/restaurantes/${id}.json`);
     return restaurantes.data;
