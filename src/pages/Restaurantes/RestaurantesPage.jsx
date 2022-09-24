@@ -1,4 +1,8 @@
-import { Container, Typography, CircularProgress } from "@material-ui/core";
+import { 
+    Container,
+    Typography,
+    CircularProgress,
+} from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
