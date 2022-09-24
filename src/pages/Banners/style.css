@@ -23,10 +23,12 @@
   padding-bottom: 14px;
   min-height: 62px;
   max-width: 100%;
+  font-size: 16px;
 }
 
 .full-height .descricao {
   min-height: 140px;
+  font-size: 10px;
 }
 
 .full-height .actions {

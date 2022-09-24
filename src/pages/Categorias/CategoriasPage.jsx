@@ -7,7 +7,6 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllCategorias } from "../../services/categorias.service";
-
 import "./styles.css";
 
 function CategoriasPage() {
@@ -20,6 +19,8 @@ function CategoriasPage() {
 		setCategorias(result.data);
 		setLoading(false);
 	};
+
+	console.log(categorias);
 
 	useEffect(() => {
 		getCategorias();
@@ -43,12 +44,16 @@ function CategoriasPage() {
 							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
 						>
 							<img
-								src={`${categoria.imagem}.png`}
-								alt={categoria.nome}
+								src={`${categoria.image}.png`}
+								alt={categoria.name}
 								className="imgCategory"
 							/>
 
-							<Typography className="textNames">{categoria.nome}</Typography>
+							<Typography className="textNames">
+								{categoria.name}
+								<br/>
+								({categoria.total})
+							</Typography>
 						</div>
 					</Grid>
 				))}
