@@ -12,7 +12,7 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes().then((response) => {
-      setNomeCategoria(response.categoria)
+      setNomeCategoria(response.categoria);
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
@@ -35,9 +35,29 @@ function RestaurantesPage() {
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
-      {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
+      {restaurantesBaratinho?.map(restaurantes => (
+        <div key={restaurantes.id}>
+          {restaurantes.name}
+        </div>
+      ))}
+      <div className="sub-header">
+        <Typography variant="body1" color="primary">
+          No Preço <span>(</span>$ $ $ <span> $ $)</span>
+        </Typography>
+      </div>
+      {restaurantesNoPreco?.map(restaurantes => (
+        <div key={restaurantes.id}>
+          {restaurantes.name}
+        </div>
+      ))}
+      <div className="sub-header">
+        <Typography variant="body1" color="primary">
+          Caro <span>(</span>$ $ $ $ $ <span>)</span>
+        </Typography>
+      </div>
+      {restaurantesCaro?.map(restaurantes => (
+        <div key={restaurantes.id}>
+          {restaurantes.name}
         </div>
       ))}
     </Container>

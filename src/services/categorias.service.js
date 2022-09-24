@@ -1,8 +1,8 @@
-import Api from "./api";
+import api from "./api";
 
 export function getAllCategorias () {
   try {
-    const categorias = Api.get(`/categorias.json`);
+    const categorias = api.get(`/categorias.json`);
     return categorias;
   } catch (err) {
     throw err;
