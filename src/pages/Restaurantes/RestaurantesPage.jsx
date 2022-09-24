@@ -43,7 +43,9 @@ function RestaurantesPage(props) {
             break;
           }
       })
-  })
+  }).finally(() => {
+      setLoading(false);
+    });
 }, []);
 
   return (
@@ -69,7 +71,7 @@ function RestaurantesPage(props) {
 
       <div className="sub-header">
         <Typography variant="body1" color="primary">
-          No Preço <span>(</span>$ $ $<span>$ $)</span>
+          No preço <span>(</span>$ $ $<span> $ $)</span>
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
@@ -80,7 +82,7 @@ function RestaurantesPage(props) {
 
       <div className="sub-header">
         <Typography variant="body1" color="primary">
-          Caro, mas vale a pena!<span>(</span>$ $ $ $ $<span>)</span>
+          Caro <span>(</span>$ $ $ $ $<span>)</span>
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
@@ -88,8 +90,6 @@ function RestaurantesPage(props) {
           {restaurante.nome}
         </div>
       ))}
-
-
     </Container>
   )
 }
