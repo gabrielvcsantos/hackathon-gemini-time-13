@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import BannersPage from "./pages/Banners";
 import CategoriasPage from "./pages/Categorias";
+import DetalhesRestaurantePage from "./pages/DetalhesRestaurantePage/DetalhesRestuarantePage";
 import RestaurantesPage from "./pages/Restaurantes";
 
 const themeCustom = createTheme({
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" exact element={<BannersPage />} />
           <Route path="/categorias" exact element={<CategoriasPage />} />
           <Route path="/restaurantes/:id" exact element={<RestaurantesPage />} />
+          <Route path="/restaurantes/:categoria/:id/detalhes" exact element={<DetalhesRestaurantePage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

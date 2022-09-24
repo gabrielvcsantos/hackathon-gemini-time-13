@@ -10,3 +10,14 @@ export async function getRestaurantes(id) {
     throw err;
   }
 };
+
+export async function getDetalhe(id) {
+  id = id ?? '';
+
+  try {
+    const detalhe = await Api.get(`/detalhes/${id}.json`);
+    return detalhe.data;
+  } catch (err) {
+    throw err;
+  }
+}

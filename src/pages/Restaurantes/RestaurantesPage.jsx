@@ -7,10 +7,12 @@ import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
 import CardRestauranteComponent from "../../components/CardRestauranteComponent";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function RestaurantesPage(props) {
-  const categoria = props.id ?? 0;
+  const navigate = useNavigate();
 
   const [nomeCategoria, setNomeCategoria] = useState('');
   const [restaurantesBaratinho, setRestaurantesBaratinho] = useState([]);
@@ -19,6 +21,8 @@ function RestaurantesPage(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const categoria = props.id ?? 0;
+
     getRestaurantes(categoria)
     .then(response => {
       setNomeCategoria(response.categoria);
@@ -60,6 +64,8 @@ function RestaurantesPage(props) {
           <CircularProgress color="primary" />
         </div>
       )}
+        
+
       <div className="sub-header">
         <Typography variant="body1" color="primary">
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
@@ -67,7 +73,9 @@ function RestaurantesPage(props) {
       </div>
       {restaurantesBaratinho?.map(restaurante => (
         <div key={restaurante.id}>
-          <CardRestauranteComponent restaurante={restaurante} />
+          <Link to={`./${restaurante.id}/detalhes`}>
+            <CardRestauranteComponent restaurante={restaurante} />
+          </Link>
         </div>
       ))}
 
@@ -78,7 +86,9 @@ function RestaurantesPage(props) {
       </div>
       {restaurantesNoPreco?.map(restaurante => (
         <div key={restaurante.id}>
-        <CardRestauranteComponent restaurante={restaurante} />
+        <Link to={`./${restaurante.id}/detalhes`}>
+            <CardRestauranteComponent restaurante={restaurante} />
+          </Link>
         </div>
       ))}
 
@@ -89,7 +99,9 @@ function RestaurantesPage(props) {
       </div>
       {restaurantesCaro?.map(restaurante => (
         <div key={restaurante.id}>
-        <CardRestauranteComponent restaurante={restaurante} />
+        <Link to={`./${restaurante.id}/detalhes`}>
+            <CardRestauranteComponent restaurante={restaurante} />
+          </Link>
         </div>
       ))}
     </Container>

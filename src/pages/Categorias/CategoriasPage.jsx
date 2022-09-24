@@ -37,10 +37,10 @@ function CategoriasPage() {
 
 			<Grid container spacing={1} className="gridContainer">
 				{categorias.map((categoria) => (
-					<Grid item xs={4} key={categoria.id}>
+					<Grid item xs={4} key={categoria.name}>
 						<div
 							className="containerCategorias"
-							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
+							onClick={() => navigate(`/restaurantes/${categoria.name}`)}
 						>
 							<img
 								src={`${categoria.image}.png`}
