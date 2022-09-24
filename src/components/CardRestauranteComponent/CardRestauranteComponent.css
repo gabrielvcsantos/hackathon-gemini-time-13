@@ -1,0 +1,41 @@
+.cardRestaurante {
+    display: flex;
+    align-items: space-around;
+    flex-direction: row;
+    margin: 24px;
+}
+
+.cardRestaurante img{
+    height: 89px;
+    width: 90px;
+    left: 24px;
+    top: 209px;
+    border-radius: 0px;
+}
+
+.cardRestaurante .dados {
+    left: 24px;
+    line-height: 10px;
+    color: #828282;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 15px;
+}
+
+.cardRestaurante .dados .name{
+    color: #828282;
+    height: 14px;
+    width: 153.4449005126953px;
+    left: 125.619140625px;
+    top: 216px;
+    border-radius: nullpx;
+    font-size: 14px;
+    line-height: 2px;
+    font-weight: 700;
+
+} 
+
+.cardRestaurante .dados .grade {
+    line-height: 2px;
+    color: #ED6E27;
+}
