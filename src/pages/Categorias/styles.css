@@ -20,4 +20,5 @@
 	flex-direction: column;
 	margin: 10px 0 5px;
 	cursor: pointer;
+	padding: 0;
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({
+const Api = axios.create({
   baseURL: "https://itc-fvg-default-rtdb.firebaseio.com/",
   headers: {
     "Content-type": "application/json",
@@ -8,4 +8,4 @@ const api = axios.create({
   },
 });
 
-export default api;
+export default Api;
